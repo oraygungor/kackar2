@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaçkar Ultra by UTMB Söyleşi 2 | Güncellenmiş</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --primary-dark: #0f172a;
+            --primary-light: #334155;
+            --secondary-bg: #f1f5f9;
+            --text-dark: #1e293b;
+            --text-light: #475569;
+            --accent-color: #3b82f6;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--secondary-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+            color: #ffffff;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        
+        header p {
+            margin: 5px 0 0;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 22px 40px;
+            font-size: 1.15em;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary-dark);
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #fcfdff;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease-in-out, padding 0.6s ease-in-out;
+            background-color: #f8fafc;
+        }
+
+        .faq-answer-content {
+            padding: 0px 40px 25px 40px;
+            color: var(--text-light);
+            font-size: 1em;
+        }
+        
+        .faq-answer-content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .faq-answer-content li {
+            margin-bottom: 8px;
+        }
+
+        .faq-answer-content strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 550px; /* Increased to accommodate longer answers */
+        }
+
+        .arrow {
+            font-size: 1.6em;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            color: var(--accent-color);
+        }
+        
+        .faq-item.active .arrow {
+            transform: rotate(90deg);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9em;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Kaçkar Ultra by UTMB Söyleşi 2</h1>
+            <p>Stratejik Hazırlık ve Yarış Günü Taktikleri</p>
+        </header>
+
+        <div id="faq-container">
+            <!-- FAQ items will be dynamically inserted here by JavaScript -->
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 | Başarıya giden yolda stratejik bir rehber.</p>
+    </footer>
+
+    <script>
+        const faqData = [
+            { 
+                question: "Kaçkar Ultra'yı diğer yarışlardan ayıran temel zorluklar nelerdir?", 
+                answer: "Kaçkar, bir dağcılık dehası gerektiren, kendine özgü bir arenadır. Onu özel kılan zorluklar şunlardır:<ul><li><strong>Çok Sert Yükseklik Kazanımı:</strong> Parkur, 10km'de 750-800 metreye varan tırmanış oranları ve 3250 metre irtifaya ulaşan geçitlerle nefesinizi keser.</li><li><strong>Ani Hava Değişimleri:</strong> Yükseldikçe sıcaklığın 0 derecenin altına düşme riski, aniden bastıran yağmur, sis ve sürekli nem, hem fiziksel hem de mental olarak hazırlıklı olmayı gerektirir.</li><li><strong>Yüksek İrtifa Etkisi:</strong> 2500 metrenin üzerine çıkıldığında azalan oksijen, performansı doğrudan etkiler ve baş dönmesi, mide bulantısı gibi irtifa hastalığı (AMS) belirtileri riski taşır.</li><li><strong>Teknik Arazi:</strong> Sürekli dikkat gerektiren kayalık, köklü ve çamurlu patikalar, basit bir koşudan çok daha fazla enerji tüketir.</li></ul>" 
+            },
+            { 
+                question: "Yüksek irtifaya şehirde, kısıtlı imkanlarla nasıl hazırlanabilirim?", 
+                answer: "İdeal olan irtifa kampıdır, ancak bu mümkün değilse şehirdeki hazırlığınızı maksimize edebilirsiniz:<ul><li><strong>Oksijen Verimliliğini Artırın:</strong> Haftada 1-2 kez, VO₂max kapasitenizi zorlayan (örn. 4x4 dk veya kısa, dik tepe tekrarları) yüksek yoğunluklu interval antrenmanları yapın. Bu, vücudunuzun mevcut oksijeni daha verimli kullanmasını öğretir.</li><li><strong>Demir Seviyelerinizi Kontrol Ettirin:</strong> Düşük ferritin (demir deposu), irtifada oksijen taşıma kapasitenizi ciddi şekilde sınırlar. Yarıştan 2-3 ay önce tam kan sayımı ve demir paneli testi yaptırın.</li><li><strong>Sırt ve Bacak Gücü:</strong> Yokuş yukarı güç yürüyüşleri ve merdiven antrenmanları, tırmanış kaslarını spesifik olarak güçlendirir. Ağırlık yeleği ile yapılan merdiven çalışmaları harika bir simülasyon sunar.</li><li><strong>Performans Destekleri:</strong> Yarışa son 3 hafta kala, nitrik oksit seviyelerini artırarak kan akışını desteklediği bilinen pancar suyu ve oksijen kullanım verimliliğini artırmaya yardımcı olabilecek cordyceps gibi doğal takviyeleri araştırmayı düşünebilirsiniz. (Kullanmadan önce mutlaka bir uzmana danışın.)</li></ul>" 
+            },
+            { 
+                question: "Etkili bir haftalık tırmanış/iniş antrenman planı nasıl yapılandırılır?", 
+                answer: "Denge ve ilerleme esastır. Haftalık planınız şu üç temel taşı içermelidir:<ul><li><strong>1. Uzun Koşu (Dayanıklılık Motoru):</strong> Haftasonu, yarış temposuna yakın veya biraz daha yavaş (Zone 2-3), bol tırmanış içeren bir uzun koşu. Amaç, zaman geçirmek ve dayanıklılığı artırmaktır.</li><li><strong>2. Tepe Tekrarları (Güç ve Verimlilik):</strong> Hafta içi, 2-8 dakikalık dik bir yokuşta 4-8 tekrar. Her tekrarda güçlü ama kontrollü bir efor hedeflenir. İnişler toparlanma içindir.</li><li><strong>3. Teknik İniş Pratiği (Beceri ve Güven):</strong> Kısa ama teknik bir parkurda iniş pratiği yapın. Amaç hız değil, akıcı ve güvenli hareket etmektir. 'Hafif adımlar, gözler ileride' mantrası burada çok işe yarar.</li></ul>" 
+            },
+            { 
+                question: "Ultra maratonlarda back-to-back (ardışık) uzun koşuların önemi nedir?", 
+                answer: "Back-to-back koşular, ultra maratonların ikinci yarısı için en gerçekçi simülasyondur. Temel faydaları:<ul><li><strong>Yorgun Bacaklarla Mücadele:</strong> İkinci gün koşusuna yorgun bacaklarla başlamak, vücudunuza ve zihninize yarışın son kilometrelerinde ne hissedeceğinizi öğretir ve bu duruma adapte olmanızı sağlar.</li><li><strong>Metabolik Verimlilik:</strong> Vücudunuzu, glikojen depoları daha düşükken enerji için yağ yakmaya teşvik eder. Bu, ultra mesafeler için en kritik adaptasyonlardan biridir.</li><li><strong>Komple Prova:</strong> Beslenme, hidrasyon ve ekipman stratejisini bire bir denemek ve olası sorunları yarıştan önce çözmek için mükemmel bir fırsattır.</li></ul>" 
+            },
+            { 
+                question: "Teknik patikalara adaptasyon için en etkili yöntemler nelerdir?", 
+                answer: "Hızdan önce denge ve güven gelir.<ul><li><strong>Form Odaklı Tekrarlar:</strong> Zorlu bir patika bölümü bulun ve yavaş hızda tekrar tekrar geçin. Her adımda nereye bastığınıza, vücut pozisyonunuza odaklanın.</li><li><strong>Core (Merkez Bölge) Gücü:</strong> Güçlü bir core, dengesiz zeminde vücudunuzu stabil tutar ve enerji tasarrufu sağlar. Plank, side plank ve dead bug gibi egzersizleri rutininize ekleyin.</li><li><strong>Ayak Bileği Güçlendirme:</strong> Tek ayak üzerinde durma, bosu topu egzersizleri ve baldır kaldırma (calf raises) hareketleri, burkulma riskini azaltır.</li></ul>" 
+            },
+            { 
+                question: "Yarışa son 4 hafta kala antrenmanlar nasıl hafifletilmeli (tapering)?", 
+                answer: "Amaç, yorgunluğu atıp zirve performansa ulaşmaktır. Bu bir dinlenme değil, 'akıllı azalmadır'.<ul><li><strong>Hacmi Azalt, Yoğunluğu Koru:</strong> Toplam koşu hacminizi kademeli olarak azaltın (son hafta %50-70'e kadar). Ancak, haftada 1-2 kez kısa, tempolu (ama zorlayıcı olmayan) koşularla bacaklarınızı canlı tutun.</li><li><strong>Tırmanışları Azaltın:</strong> Özellikle son 2 hafta, kaslara en çok yük bindiren uzun tırmanış ve inişlerden kaçının.</li><li><strong>Toparlanmaya Odaklanın:</strong> Uyku kalitesini artırın, beslenmenize dikkat edin ve esneme/foam roller seanslarına daha fazla zaman ayırın.</li></ul>" 
+            },
+            { 
+                question: "Mental dayanıklılığı artırmak için hangi somut adımları atabilirim?", 
+                answer: "Mental güç, fiziksel güç kadar antrenman gerektirir.<ul><li><strong>Görselleştirme:</strong> Her gece 5 dakika, kendinizi yarışın zorlu bir anında (örn. bir tırmanışta) güçlü ve kontrollü hissederken hayal edin. Bitiş çizgisini geçtiğiniz anı canlandırın.</li><li><strong>'Neden'inizi Bulun:</strong> Bu yarışa neden katıldığınızı 3-5 madde halinde bir karta yazın ve zor anlarda okumak için çantanıza koyun.</li><li><strong>Zorluk Günlüğü Tutun:</strong> Zorlu geçen bir antrenmandan sonra ne hissettiğinizi, nasıl üstesinden geldiğinizi yazın. Bu, zorlukların geçici olduğunu size hatırlatır.</li></ul>" 
+            },
+            { 
+                question: "Yarış sırasında 'duvara tosladığımda' kullanabileceğim acil durum stratejileri var mı?", 
+                answer: "Her ultra koşucusunun bir 'reset' düğmesi olmalı:<ul><li><strong>Parçalara Böl:</strong> Tüm yarışı düşünmeyi bırakın. Tek hedefiniz bir sonraki kontrol noktasına (CP) ulaşmak olsun.</li><li><strong>60 Saniyelik Mola:</strong> Durun. 3 derin nefes alın. Bir yudum su için. Bir lokma bir şey yiyin. Bu 60 saniye, panik döngüsünü kırabilir.</li><li><strong>Yürü-Koş Döngüsü:</strong> '5 dakika koş, 1 dakika yürü' gibi bir döngüye geçin. Bu, ritim kaybetmeden mental ve fiziksel olarak toparlanmanızı sağlar.</li><li><strong>Mantranızı Tekrarlayın:</strong> 'Güçlüyüm, sakinim, devam ediyorum' gibi basit ve pozitif bir mantrayı adımlarınızın ritmiyle tekrarlayın.</li></ul>" 
+            },
+            { 
+                question: "Kutsal Kase: Doğru ayakkabıyı ne zaman ve nasıl seçmeliyim?", 
+                answer: "Ayakkabı, en kritik ekipmanınızdır. Seçim süreci aceleye gelmez.<ul><li><strong>Aranacak Özellikler:</strong> Kaçkar için <strong>agresif ve derin dişli</strong> (çamurda ve ıslak zeminde tutunan), <strong>suyu hızla dışarı atan, sentetik katmanlı</strong> (yani 'sentetik saya', ayağın ıslak kalmasını önleyen, çabuk kuruyan malzeme) bir yapı aramalısınız. Gore-Tex (GTX) modeller yağmurda korusa da, içine su girdiğinde kuruması çok zordur, bu yüzden genellikle tavsiye edilmez.</li><li><strong>Bilek Desteği:</strong> Dik ve teknik inişler nedeniyle ayak burkulma riski yüksektir. Bu yüzden, ayağı yanlardan iyi saran ve destekleyen, 'mid' (orta boy) kesim olmasa bile stabil bir yapıya sahip modelleri tercih etmek akıllıca olacaktır.</li><li><strong>Test Sürüşleri:</strong> Seçtiğiniz ayakkabıyla yarıştan en az 4-6 hafta önce tanışın. Onunla mutlaka birkaç uzun ve teknik koşu yaparak ayağınızla uyumunu test edin.</li></ul>" 
+            },
+            { 
+                question: "Antrenmanlarda beslenmeyi nasıl planlamalıyım?", 
+                answer: "Antrenmanlar, midenizi yarış gününe hazırladığınız bir laboratuvardır.<ul><li><strong>Saatlik Kalori Hedefi:</strong> Uzun koşularda (90 dakikadan uzun) saatte 45-60 gram karbonhidrat (1-2 jel veya eşdeğeri) almayı hedefleyin.</li><li><strong>Erken Başla, Düzenli Devam Et:</strong> Beslenmeye ilk açlık veya susuzluk hissini beklemeden, koşunun 45-60. dakikasında başlayın ve düzenli aralıklarla devam edin.</li><li><strong>Çeşitlilik Önemlidir:</strong> Sadece jellere bağımlı kalmayın. Hurma, enerji barları, fıstık ezmesi gibi gerçek gıdaları da deneyerek midenizin neyi tolere ettiğini öğrenin. Sıvı alımını ve elektrolitleri (tuz tabletleri) de bu denemelere dahil edin.</li></ul>" 
+            },
+            { 
+                question: "Çanta ve zorunlu malzemeleri ne sıklıkla denemeliyim?", 
+                answer: "Yarış çantanız vücudunuzun bir uzvu gibi olmalı.<ul><li><strong>Tam Yüklü Prova:</strong> Yarıştan önceki son 4-5 uzun koşunuzu, yarış günü taşıyacağınız <strong>tüm zorunlu malzemelerle</strong> (yağmurluk, kafa lambası, 1.5 L su, ilk yardım kiti, batonlar vb.) yapın.</li><li><strong>Erişim Kolaylığı:</strong> Provalar sırasında sık kullanacağınız malzemelere (jel, tuz tableti, telefon) çantanızı çıkarmadan ulaşıp ulaşamadığınızı test edin.</li><li><strong>Baton Tekniği:</strong> Baton kullanacaksanız, onları çantanızdan hızlıca çıkarıp toplamayı ve tırmanış/iniş tekniklerini bu provalarda tekrar tekrar uygulayın.</li></ul>" 
+            }
+        ];
+
+        const faqContainer = document.getElementById('faq-container');
+
+        faqData.forEach((item) => {
+            const faqItem = document.createElement('div');
+            faqItem.classList.add('faq-item');
+
+            faqItem.innerHTML = `
+                <button class="faq-question">
+                    <span>${item.question}</span>
+                    <span class="arrow">›</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">${item.answer}</div>
+                </div>
+            `;
+            
+            faqContainer.appendChild(faqItem);
+        });
+
+        faqContainer.addEventListener('click', (e) => {
+            const questionButton = e.target.closest('.faq-question');
+            if (!questionButton) return;
+
+            const clickedItem = questionButton.parentElement;
+            
+            // Close all other items before opening the new one
+            const allItems = faqContainer.querySelectorAll('.faq-item');
+            allItems.forEach(item => {
+                if (item !== clickedItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Toggle the clicked item
+            clickedItem.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
